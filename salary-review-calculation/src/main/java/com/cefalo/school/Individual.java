@@ -1,17 +1,16 @@
 package com.cefalo.school;
 
-
 import com.cefalo.school.calculator.Impact;
 import com.cefalo.school.calculator.ReviewCalculator;
 import com.cefalo.school.calculator.Score;
 
 public class Individual {
 
-    private String name;
-    private String role;
-    private int salary;
-    private Score score;
-    private Impact impact;
+    protected String name;
+    protected String role;
+    protected int salary;
+    protected Score score;
+    protected Impact impact;
 
     Individual(String name, String role, int salary, Score personScore) {
         this.name = name;
@@ -19,13 +18,6 @@ public class Individual {
         this.salary = salary;
         this.impact = new ImpactFactory().getImpact(this.role);
         this.score = personScore;
-    }
-
-   
-
-    public double calculateSalary() {
-        ReviewCalculator review = new ReviewCalculator(this.salary, this.score, this.impact);
-        return review.calculate();
     }
 
     public String getName() {

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Team {
 
-    private String name;
-    private ArrayList<Individual> teamMembers;
-    private Individual teamLead;
+    protected String name;
+    protected ArrayList<Individual> teamMembers;
+    protected Individual teamLead;
 
     public Team(String name) {
         this.name = name;
@@ -31,15 +31,6 @@ public class Team {
 
     public void addMember(Individual individual) {
         this.teamMembers.add(individual);
-    }
-
-    public double calculate() {
-        double total = 0;
-        for (Individual i : teamMembers) {
-            total += i.calculateSalary();
-        }
-        total += this.teamLead.calculateSalary();
-        return total;
     }
 
 }
